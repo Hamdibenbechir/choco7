@@ -1,0 +1,148 @@
+
+
+
+{% paginate collection.products by 10 %}
+  <div class="collections">
+    <h1 class="bars">{{ collection.title }}</h1>
+    
+    <div class="bars-pro">
+       {% for product in collection.products %}
+         {% render 'product' , product: product %}
+       {% endfor %}
+    </div>
+ 
+ 
+ 
+ </div>
+   {% render 'pagination' , pagination: paginate %}
+{% endpaginate %}
+
+
+
+
+
+
+<style>
+    * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .collections{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .bars{
+    color: #3f000f;
+    z-index: 3;
+  }
+  @media screen and (max-width: 600px) {
+     .bars{
+      font-size: 20px;
+     }
+  }
+  .bars-pro{
+
+    width: 60%;
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+  }
+@media screen and (max-width: 1350px){
+  .bars-pro{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px){
+  .bars-pro{
+    width: 100%;
+  }
+}
+
+  .collec-img1{
+    width: 120px;
+    position: fixed;
+    top: 10px;
+    left: -50px;
+    rotate: 40deg;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.5s;
+  }
+  .collec-img2{
+    width: 120px;
+    position: fixed;
+    top: 10px;
+    right: -50px;
+    rotate: -40deg;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.5s;
+  }
+  .collec-img3{
+    width: 120px;
+    position: fixed;
+    bottom: 0;
+    right: -50px;
+    rotate: -40deg;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.5s;
+    
+  }
+  .collec-img4{
+    width: 120px;
+    position: fixed;
+    bottom: 0;
+    left: -50px;
+    rotate: 40deg;
+    cursor: pointer;
+    z-index: 6;
+    transition: 0.5s;
+    
+  }
+  .collec-img1:hover,.collec-img4:hover{
+    left:-40px ;
+  }
+
+  .collec-img3:hover,.collec-img2:hover{
+    right:-40px ;
+  }
+
+
+  @media screen and (max-width: 400px) {
+     .collec-img1,.collec-img2,.collec-img3,.collec-img4{
+      width: 80px;
+     }
+  }
+
+
+</style>
+
+
+{% schema %}
+{
+  "name": "collection section",
+  "settings": [
+      {
+        "type": "text",
+        "id": "title_collection",
+        "default": "Chocolate Bars Collection",
+        "label": "title for the collection page"
+      },
+      {
+        "type":"number",
+        "id":"pro_range",
+        "default": 8,
+        "label": "range of the products to show"
+      }
+    ]
+}
+{% endschema %}

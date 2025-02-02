@@ -1,0 +1,1771 @@
+
+<div id="login" class="login">
+ 
+     
+    <div class="mymain">
+     <div class="hamadi">
+      <h1>Choco7</h1>
+      <a id="mybtnpro" href="">{% render "close-me" %}</a>
+      
+     </div>
+
+    
+      <div class="loginmoi">
+
+        <div class="discount">
+      
+          <img src="{{ 'glass.png' |  asset_url }}" alt="">
+        </div>
+    
+
+       <div class="inputme">
+        <h1>Drop Your Email <br> And Get 20% Discount</h1>
+        <form id="discountForm">
+          <input id="emailInput" type="email" placeholder="Email" required />
+           <button type="submit">Submit</button>
+      </form>
+      <p id="discountMessage"> Enjoy your 20% off!</p>
+
+      </div>
+     </div>
+   </div>
+ 
+</div>
+
+
+
+
+<div class="hero">
+
+  <img class="img1" src="{{ 'glasss.png' | asset_url }}" alt="">
+  <img class="img2" src="{{ 'banan.png' |  asset_url  }}" alt="">
+  <img class="img3" src="{{ 'browni.png' |  asset_url }}" alt="">
+  <img class="img4" src="{{ 'cakee.png' |  asset_url }}" alt="">
+  <div class="mobile-img">
+    <img class="img4-mobil" src="{{ 'glass.png' |  asset_url }}" alt="">
+    <img class="img2-mobil" src="{{ 'glasss.png' |  asset_url  }}" alt="">
+    <img class="img3-mobil" src="{{ 'browni.png' |  asset_url }}" alt="">
+    <img class="img1-mobil" src="{{ 'cakee.png' |  asset_url }}" alt="">
+  </div>
+
+  <h1 class="intro">{{ section.settings.hero }}<br> <span>{{ section.settings.hero_span }}</span></h1>
+  <p>{{ section.settings.hero_p }} </p>
+  <a href="{{ routes.all_products_collection_url }}">{{ section.settings.hero_btn }}</a>
+
+</div>
+
+<div class="about">
+
+  <div class="custom-shape-divider-top-1731268908">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+
+  <div class="choco-img">
+    
+    <img src="{{ 'browni.png' |   asset_url }}" alt="">
+  </div>
+  <div class="choco-info">
+    <h1>{{ section.settings.about_title }}</h1>
+    <p>{{ section.settings.about_p }}</p>
+    <a href="{{ routes.all_products_collection_url }}">{{ section.settings.about_btn }}</a>
+  </div>
+</div>
+
+<div class="video">
+  <video class="my-video" autoplay loop muted playsinline >
+    <source type="video/mp4" src="{{ 'chocolate.mp4' |  asset_url }}">
+  </video>
+</div>
+
+
+<div class="best-sale">
+  <h1>{{ section.settings.title_best }}</h1>
+  <div class="best-pro" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+  {% for product in collections['best-selling-products'].products %}
+
+    {% render 'product' , product: product %}
+  
+ 
+  {% endfor %}
+  
+</div>
+
+<a class="More-btn" href=" {{ routes.all_products_collection_url }}">{{ section.settings.best_btn }}</a>
+</div>
+
+<div class="find-our">
+   <h1>{{ section.settings.buyers }}</h1>
+
+   <div class="wrapper">
+    <div class="item item1">
+      <img width="100px" src="{{ 'dierbergs.png' | asset_url }}" alt="">
+    </div>
+    <div class="item item2">
+      <img width="100px" src="{{ 'hallmark.png' | asset_url }}" alt="">
+    </div>
+    <div class="item item3">
+      <img width="100px" src="{{ 'marianos.png' | asset_url }}" alt="">
+    </div>
+    <div class="item item4">
+      <img width="100px" src="{{ 'ttg.png' | asset_url }}" alt="">
+    </div>
+    <div class="item item5">
+       <img width="100px" src="{{ 'whole.png' | asset_url }}" alt="">
+    </div>
+    <div class="item item6">
+      <img width="150px" src="{{ 'BartellDrugs.png' | asset_url }}" alt="">
+    </div>
+
+    <div class="item item7">
+      <img width="100px" src="{{ 'Straubs.png' | asset_url }}" alt="">
+    </div>
+
+    <div class="item item8">
+      <img width="100px" src="{{ 'tjtmax.png' | asset_url }}" alt="">
+    </div>
+
+   </div>
+   
+</div>
+
+
+
+ <div class="collections">
+    <h1 class="titleshope">Shop By Collection</h1>
+  <div class="raperdiv">
+    <a href="/collections/frontpage">
+    <div class="collection">
+      <h1>Collection</h1>
+    </div>
+    </a>
+   <a href="/collections/chocolate-bar">
+      <div class="chocoBar">
+      <h1>Bars</h1>
+    </div>
+    </a>
+   <a href="/collections/hello">
+    <div class="cups">
+      <h1>Cups & Bites</h1>
+    </div>
+    </a>
+  </div>
+ </div>
+
+<div class="explore-more">
+
+  <div class="more-info">
+    <h1>{{ section.settings.engoy_title }}</h1>
+    <p>{{ section.settings.engoy_p }}</p>
+      <a href="{{ routes.all_products_collection_url }}">{{ section.settings.engoy_btn }}</a>
+  </div>
+  <img src="{{ 'cake.png' |  asset_url }}" alt="">
+
+</div>
+
+<div class="gift">
+ <h1>Gift ideas</h1>
+ <div class="gift-me">
+  <img src="{{ 'gift.png' |  asset_url }}" alt="">
+  <p>Chocolate is a food made from roasted and ground cocoa beans that can be a liquid, solid, or paste, either on its own or as a flavoring in other foods. The cacao tree has been used as a sourceof food for at least 5,300 years, starting with the Mayo-Chinchipe culture in what is present-day Ecuado</p>
+ </div>
+  <a href="/collections/gift-ideas">Gift ideas</a>
+</div>
+
+<!-- Start of Judge.me code --> 
+<div class='jdgm-carousel-wrapper'> 
+  {% assign jm_metafields = shop.metafields.judgeme %} 
+  <div class='jdgm-carousel-title-and-link'> 
+    <div class="reviws-header">
+      <h2 class='jdgm-carousel-title'>Let customers speak for us</h2> 
+      <span class='jdgm-all-reviews-rating-wrapper' href='javascript:void(0)'> 
+        <span style='display:block' data-score='{{ jm_metafields.all_reviews_rating }}' class='jdgm-all-reviews-rating' aria-label='{{ jm_metafields.all_reviews_rating }} stars' tabindex='0' role='img'></span> 
+        <span style='display: block' class='jdgm-carousel-number-of-reviews' data-number-of-reviews='{{ jm_metafields.all_reviews_count }}'> 
+            from {{ shop.metafields.judgeme.all_reviews_count }} reviews 
+        </span> 
+      </span> 
+    </div>
+  
+    
+  </div> 
+  {{ jm_metafields.featured_carousel }} 
+</div> 
+<!-- End of Judge.me code -->
+
+<div class="change-world">
+  <h1>Changing The World with Choco7®</h1>
+  <div>
+    <img src="{{ 'change1.png' |  asset_url }}" alt="">
+    <img src="{{ 'change3.png' | asset_url }}" alt="">
+    <img src="{{ 'change2.png' | asset_url }}" alt="">
+    <img src="{{ 'change6.png' | asset_url }}" alt="">
+    <img src="{{ 'change4.png' | asset_url }}" alt="">
+    <img src="{{ 'change5.png' | asset_url }}" alt="">
+  </div>
+</div>
+
+{% if product.tags['hello'] %}
+   
+  
+{% endif %}
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+.login{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.425);
+  
+  
+  
+}
+.hamadi{
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+.hamadi a{
+  width: 30px;
+  color: #fff !important;
+}
+
+
+.mymain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3F000F;
+  width: 350px;
+  height: 250px;
+  color: #fff;
+  scale: 2;
+  gap: 10px;
+
+  border-radius: 10px;
+}
+.mymain h1{
+  font-size: 15px;
+}
+.loginmoi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.discount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+}
+.discount img{
+  width: 170px;
+  height: 170px;
+}
+
+.inputme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 20px;
+}
+#discountForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputme input{
+  max-width: 180px;
+  background-color: #fff;
+  height: 30px;
+  border: 1px solid #3F000F;
+  border-radius: 5px;
+}
+
+.inputme button{
+  text-decoration: none;
+  color: #3F000F;
+  background-color: #fff;
+  padding: 10px 15px;
+  font-size: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+}
+#discountMessage{
+  font-size: 15px;
+}
+
+.loginmoi{
+  display: flex;
+  width: 100%;
+  
+}
+
+
+@media screen and (max-width: 700px) {
+  .mymain{
+
+  width: 300px;
+  height: 250px;
+
+}
+.inputme input{
+  
+  
+
+
+}
+  }
+  @media screen and (max-width: 600px) {
+    .mymain{
+
+   width: 250px;
+  height: 250px;
+
+}
+.discount img{
+  width: 150px;
+  height: 150px;
+}
+.mymain h1{
+  font-size: 10px;
+}
+.inputme input{
+  
+  height: 20px;
+
+
+}
+#discountForm button{
+  padding: 7px 10px;
+}
+#discountMessage{
+  font-size: 10px;
+  display: none;
+}
+  }
+  @media screen and (max-width: 500px) {
+    .mymain{
+
+width: 200px;
+height: 250px;
+
+}
+.discount img{
+  width: 150px;
+  height: 150px;
+}
+.inputme input{
+  
+width: 100%;
+
+
+}
+
+  }
+
+
+  @media screen and (max-width: 400px) {
+    .mymain{
+
+width: 150px;
+height: 200px;
+
+}
+.discount img{
+  width: 100px;
+  height: 100px;
+}
+.inputme input{
+  
+width: 100%;
+
+
+}
+.inputme a{
+  
+  padding: 5px 7px;
+  
+}
+
+
+  }
+
+
+
+
+
+
+
+
+
+  .change-world{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .change-world h1{
+    color: #3F000F;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .change-world div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .change-world h1{
+      font-size: 30px;
+    }
+    .change-world img{
+      width: 250px;
+      height: 250px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .change-world h1{
+      font-size: 25px;
+    }
+    .change-world img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .change-world h1{
+      font-size: 20px;
+    }
+    .change-world img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+
+
+  
+ /* HERO animation start */
+ @keyframes intro {
+    from{
+      transform: translateX(-1000px);
+  
+    }
+    to{
+      transform: translateX(0px);
+    }
+  }
+  @keyframes move {
+    from{
+      opacity: 0;
+      scale: 0;
+  
+    }
+    to{
+      opacity: 1;
+       scale: 1;
+    }
+  }
+
+  .intro , .hero p , .hero a{
+    animation: intro 0.7s linear;
+    transition: 0.5s;
+  }
+  .img1,.img2,.img3,.img4{
+    animation: move 0.9s linear;
+    transition: 0.7s;
+    
+  }
+  .img1-mobil,.img2-mobil,.img3-mobil,.img4-mobil{
+    animation: move 0.9s linear;
+    transition: 0.7s;
+    
+  }
+  /* HERO animation end */
+
+  /* ABOUT animation start */
+
+  @keyframes aboutimg {
+    from{
+      transform: translateX(-500px);
+  
+    }
+    to{
+      transform: translateX(0px);
+    }
+  }
+  @keyframes aboutinfo {
+    from{
+      transform: translateX(500px);
+  
+    }
+    to{
+      transform: translateX(0px);
+    }
+  }
+  .choco-img{
+    animation: aboutimg 1s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    animation-fill-mode: forwards;
+  }
+  .choco-info{
+    animation: aboutinfo 1s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    animation-fill-mode: forwards;
+    
+  }
+
+  /* ABOUT animation end */
+  /* BEST animation strat */
+  @keyframes bestsale {
+    from{
+      transform: translateX(500px);
+  
+    }
+    to{
+      transform: translateX(0px);
+    }
+  }
+
+  .best-sale h1{
+    animation: bestsale 1s linear;
+    animation-timeline: view();
+    
+    animation-range: entry 0% cover 50%; 
+  }
+  /* BEST animation end */
+
+  /* shope animation start */
+  @keyframes shop {
+    from{
+      scale: 0;
+  
+    }
+    to{
+      scale: 1;
+    }
+  }
+
+  /* shope animation end */
+
+  .gift{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3F000F;
+  }
+  .gift a{
+    text-decoration: none;
+    color: #3F000F;
+    background-color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    font-weight: bold;
+  }
+  .gift h1{
+   color: #fff;
+   font-size: 40px;
+   margin-top: 20px;
+  }
+  .gift-me{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px ;
+    width: 100%;
+  }
+  .gift-me img{
+    width: 400px;
+    height: 400px;
+  }
+  .gift-me p{
+    max-width: 450px;
+    color: #fff;
+    font-size: 20px;
+
+  }
+
+
+  @media (max-width: 1020px) {
+    .gift-me{
+    
+    gap: 100px ;
+    
+  }
+
+}
+
+@media (max-width: 850px) {
+    .gift-me{
+    
+    gap: 50px ;
+    
+  }
+  .gift-me img{
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  .gift-me{
+    
+    gap: 20px ;
+    
+  }
+  
+  .gift-me img{
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .gift-me{
+    flex-direction: column;
+  }
+  .gift-me p{
+    font-size: 15px;
+    max-width: 250px;
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .gift h1{
+   
+   font-size: 30px;
+   
+  }
+  .gift-me img{
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+    
+  }
+
+
+}
+
+
+
+
+  .collections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 600px;
+    background-color: #3F000F;
+  }
+  .collections h1{
+    
+    font-size: 40px;
+    margin-bottom: 20px;
+
+  }
+  .titleshope{
+    color: #fff ;
+  }
+  .raperdiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 20px;
+    
+  }
+  .raperdiv div{
+    object-fit: cover;
+    
+    box-shadow: #fff 1px 1px 4px 1px;
+    width: 350px;
+    height: 350px;
+    
+    
+    overflow: hidden;
+    border-radius: 10px;
+    
+    transition: 0.5s;
+    
+    
+  }
+  .raperdiv div:hover{
+    scale: 1.1;
+  }
+
+  .raperdiv a{
+    text-decoration: none;
+  }
+  .raperdiv h1{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    
+    color: #fff;
+    opacity: 0.95;
+    font-size: 30px;
+    
+    
+    writing-mode: vertical-rl;
+  }
+  .collection{
+  
+   background-size: 100%;
+   background-image: url({{ 'cakee.png' |  asset_url }}) ; 
+   
+   object-fit: cover;
+   
+  }
+  .collection h1{
+    background-color: #fa06c5da;
+  
+   
+  }
+  
+  .chocobar{
+  
+   background-size: 100%;
+   background-image: url({{ 'staraw.png' |  asset_url }}) ; 
+  
+   object-fit: cover;
+   
+  }
+  .chocobar h1{
+    background-color: #f87dddda;
+
+  
+ }
+
+  .cups{
+  
+  background-size: 100%;
+  background-image: url({{ 'glasss.png' |  asset_url }}) ; 
+ 
+  object-fit: cover;
+  
+ }
+ .cups h1{
+  
+ background-color: #024702da;
+  
+  
+ }
+
+@media (max-width: 1170px) {
+  .raperdiv div{
+  
+    width: 300px;
+    height: 300px;
+    display: flex;
+    
+    
+    
+    
+  }
+}
+
+@media (max-width: 1020px) {
+  .raperdiv h1{
+  font-size: 20px;
+  }
+  .raperdiv div{
+  
+    width: 250px;
+    height: 250px;
+    display: flex;
+    
+    
+    
+    
+  }
+}
+@media (max-width: 900px) {
+  .raperdiv h1{
+  font-size: 20px;
+  }
+  .raperdiv div{
+  
+    width: 200px;
+    height: 200px;
+    display: flex;
+    
+    
+    
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .titleshope{
+    font-size: 30px !important;
+  }
+
+  .raperdiv {
+  gap:15px;
+  
+  
+}
+.collections{
+    height:800px;
+  }
+  .raperdiv div{
+  
+    width: 250px;
+    height: 250px;
+    gap: 20px;
+    
+    
+  }
+  .raperdiv h1{
+    
+    font-size: 15px;
+
+  }
+}
+@media (max-width: 550px) {
+  .titleshope{
+    font-size: 30px !important;
+  }
+
+  .raperdiv {
+  gap:15px;
+  
+  
+}
+.collections{
+    height:600px;
+  }
+  .raperdiv div{
+  
+    width: 200px;
+    height: 200px;
+    
+    
+  }
+  .raperdiv h1{
+    
+    font-size: 15px;
+
+  }
+}
+@media (max-width: 450px) {
+   .titleshope{
+    font-size: 25px !important;
+   }
+
+  .collections{
+    height:500px;
+  } 
+  .raperdiv {
+  gap:15px;
+  
+  
+}
+  .raperdiv div{
+  
+    width:180px;
+    height: 180px;
+    display: flex;
+    gap:15px;
+    
+  }
+  .raperdiv h1{
+    
+    font-size: 10px;
+  
+
+  }
+}
+@media (max-width: 400px) {
+   .titleshope{
+    font-size: 25px !important;
+   }
+
+  .collections{
+    height:600px;
+  } 
+  .raperdiv {
+  gap:15px;
+  
+  
+}
+  .raperdiv div{
+  
+    width:140px;
+    height: 140px;
+    display: flex;
+    gap:10px;
+    
+  }
+  .raperdiv h1{
+    
+    font-size: 10px;
+  
+
+  }
+}
+
+
+
+
+
+
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 35px;
+    position: relative;
+  }
+  .hero .img1{
+    width: 200px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    rotate: 20deg;
+  }
+  .hero .img2{
+    width: 200px;
+    position: absolute;
+    rotate: -20deg;
+    right: 100px;
+    top: 50px;
+  }
+
+  .hero .img3{
+    width: 200px;
+    position: absolute;
+    left: 100px;
+    bottom: -10px;
+    rotate: -20deg;
+  }
+
+  .hero .img4{
+    width: 200px;
+    position: absolute;
+    rotate: 20deg;
+    right: 100px;
+    z-index: 6;
+    
+    bottom: -10px;
+  }
+  .mobil-img1{
+    display: none;
+  }
+  .img4-mobil{
+    display: none;
+    
+  }
+  .img1-mobil{
+    display: none;
+  
+    }
+
+    .img2-mobil{
+    display: none;
+    
+  }
+  .img3-mobil{
+    display: none;
+    
+  }  
+  
+  @media screen and (max-width: 700px) {
+     
+   .img2,.img3 {
+    display: none;
+  
+  }
+  .img1,.img4{
+    display: none;
+  }
+
+
+  .mobile-img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  
+    }
+
+  .img1-mobil{
+    display: block;
+    width: 120px;
+    rotate: 20deg;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+  }
+  .img4-mobil{
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 120px;
+    
+    rotate: -20deg;
+  }
+  .img2-mobil{
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    width: 120px;
+    rotate: -20deg;
+  }
+  .img3-mobil{
+    display: block;
+    width: 120px;
+    rotate: 20deg;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    
+  }
+  }
+
+  @media screen and (max-width: 400px) {
+     
+   .img2,.img3 {
+    display: none;
+  
+  }
+  .img1,.img4{
+    display: none;
+  }
+
+
+
+
+  .img1-mobil{
+    display: block;
+    width: 100px;
+    rotate: 20deg;
+    position: absolute;
+    top: 40px;
+    right: 200px;
+  }
+  .img4-mobil{
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 240px;
+    width: 100px;
+    
+    rotate: -20deg;
+  }
+  .img2-mobil{
+    display: block;
+    position: absolute;
+    bottom: 70px;
+    left: 240px;
+    width: 100px;
+    rotate: -20deg;
+  }
+  .img3-mobil{
+    display: block;
+    width: 100px;
+    rotate: 20deg;
+    position: absolute;
+    bottom: 70px;
+    right: 200px;
+    
+  }
+  }
+
+
+
+  .intro {
+    font-size: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #3F000F;
+    z-index: 6;
+  }
+
+  .hero p {
+    font-size: 15px;
+    z-index: 6;
+    max-width: 350px;
+  }
+
+  .hero a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #3F000F;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 20px;
+    z-index: 6;
+  }
+
+  @media screen and (max-width: 700px) {
+    .intro {
+      font-size: 60px;
+    }
+    .hero p{
+      max-width: 250px;
+    }
+
+  }
+
+  @media screen and (max-width: 400px) {
+    .intro {
+      font-size: 50px;
+    }
+    .hero p{
+      text-align: center;
+      max-width: 250px;
+    }
+  }
+
+
+  .about {
+    background-color: #3F000F;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .custom-shape-divider-top-1731268908 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1731268908 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 101px;
+  }
+
+  .custom-shape-divider-top-1731268908 .shape-fill {
+    fill: #fff;
+  }
+
+  .choco-img {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+
+  .choco-img img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .choco-info h1 {
+    color: #fff;
+  }
+
+
+
+  .choco-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    gap: 20px;
+  }
+
+  .choco-info p {
+    color: #fff;
+    line-height: 30px;
+    max-width: 400px;
+  }
+
+  .choco-info a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #3F000F;
+    padding: 12px 20px;
+    border-radius: 20px;
+  }
+
+
+
+  @media screen and (max-width: 700px) {
+    .about {
+      flex-direction: column;
+      justify-content: center;
+      height: 700px;
+      justify-content: center;
+      
+    }
+
+    .choco-img img {
+      width: 300px;
+      height: 300px;
+    }
+
+    .choco-img {
+
+      
+    
+    }
+
+    .choco-info h1 {
+      font-size: 25px;
+    }
+
+    .choco-info {
+
+    
+      gap: 10px;
+    }
+
+    .choco-info p {
+      line-height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .choco-info p {
+      font-size: 15px;
+    }
+    .choco-img {
+
+      width: 40%;
+      gap: 10px;
+    }
+    .choco-info {
+
+      width: 60%;
+      gap: 10px;
+    }
+  }
+
+
+
+
+  .video {
+    width: 100%;
+  }
+
+
+  .my-video {
+    width: 100%;
+
+  }
+
+  @media screen and (max-width:1200px) {
+    .my-video {
+      width: ;
+    }
+  }
+
+  .best-sale {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .best-sale h1{
+    color: #3F000F;
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
+
+  .best-pro::-webkit-scrollbar{
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 8px;
+    
+  }
+  .best-pro::-webkit-scrollbar-thumb{
+    background-color: #3F000F;
+    border-radius: 10px;
+    scrollbar-width: 20px;
+    
+  }
+  .best-pro {
+    width: 85%;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    position: relative;
+    overflow-x: scroll;
+    overflow-inline: auto;
+    gap: 30px;
+    margin-top: 20px;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: auto;
+    scrollbar-width: 50px;
+    
+
+  }
+
+  .More-btn{
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #3F000F;
+    color:#fff ;
+    padding: 12px 20px;
+    border-radius: 20px;
+    
+  }
+
+  /* @media screen and (max-width: 600px) {
+    .best-pro{
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  } */
+
+  @media screen and (max-width: 400px) {
+    .best-sale h1{
+    
+    font-size: 25px;
+    
+  }
+  }
+  @media screen and (max-width: 300px) {
+    .best-sale h1{
+    
+    font-size: 20px;
+    
+  }
+  }
+
+  .find-our{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+    
+    
+    
+  }
+
+.find-our h1{
+  color: #3F000F;
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+
+  
+.wrapper{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  
+  margin-inline: auto;
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right ,
+  rgb(0,0,0,0),
+  rgb(0,0,0,1) 20%,
+  rgb(0,0,0,1) 80%,
+  rgb(0,0,0,0)
+  );
+}
+
+@keyframes left {
+  to{
+    left: -500px;
+  }
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 100px;
+  height: 150px;
+  border-radius: 16px;
+  background-color: #fff;
+  position: absolute;
+  left: max(calc(500px * 4));
+  animation-name: left;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item1{
+  animation-delay: calc(10s / 8 * ( 8 - 1 ) * -1);
+}
+
+.item2{
+  animation-delay: calc(10s / 8 * ( 8 - 2 ) * -1);
+}
+.item3{
+  animation-delay: calc(10s / 8 * ( 8 - 3 ) * -1);
+}
+.item4{
+  animation-delay: calc(10s / 8 * ( 8 - 4 ) * -1);
+}
+.item5{
+  animation-delay: calc(10s / 8 * ( 8 - 5 ) * -1);
+}
+.item6{
+  animation-delay: calc(10s / 8 * ( 8 - 6 ) * -1);
+}
+.item7{
+  animation-delay: calc(10s / 8 * ( 8 - 7 ) * -1);
+}
+.item8{
+  animation-delay: calc(10s / 8 * ( 8- 8 ) * -1);
+}
+
+
+@media screen and (max-width: 500px) {
+  .find-our h1{
+  
+  font-size: 25px;
+}
+  }
+  @media screen and (max-width: 304px) {
+    .find-our h1{
+  
+  font-size: 15px;
+}
+  
+  }
+
+
+  .explore-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .explore-more img{
+    width: 30%;
+  }
+
+  .more-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .more-info h1{ 
+    font-size: 50px;
+    color: #3F000F;
+  }
+  .more-info p{ 
+    font-size: 15px;
+    color: #3F000F;
+    max-width: 350px;
+  }
+  .more-info a{ 
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #3F000F;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 20px;
+    z-index: 6;
+    width: 125px;
+  }
+
+
+
+  @media screen and (max-width: 600px) {
+  .explore-more{
+    flex-direction: column;
+    
+    
+  }
+  .more-info a{ 
+    
+    font-size: 12px;
+    
+  }
+  .more-info{
+    align-items: center;
+  }
+   .more-info h1{
+      font-size: 30px;
+   }
+  }
+
+  @media screen and (max-width: 300px) {
+    .more-info h1{
+      font-size: 25px;
+   }
+  }
+
+
+  .jdgm-carousel-wrapper{
+    height: 500px;
+  }
+  .reviws-header{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  
+</style>
+
+<script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
+
+
+<script>
+const login = document.getElementById("login");
+const mybtn = document.getElementById("mybtnpro");
+
+// Check if the popup should be shown
+if (!localStorage.getItem("discountReceived")) {
+  setTimeout(() => {
+    login.style.display = "flex";
+  }, 7000); // Show popup after 7 seconds
+}
+
+// Close the popup when the close button is clicked
+mybtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  login.style.display = "none";
+});
+
+// Handle the discount form submission
+document.getElementById("discountForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the form from reloading the page
+
+  const emailInput = document.getElementById("emailInput").value;
+
+  // Validate email
+  if (!emailInput || !/\S+@\S+\.\S+/.test(emailInput)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Store a flag in localStorage to prevent the popup from showing again
+  localStorage.setItem("discountReceived", "true");
+
+  // Optionally, send the email to a backend for storage
+  // Example POST request:
+  // fetch("/save-email", { method: "POST", body: JSON.stringify({ email: emailInput }) });
+
+  // Redirect to Shopify with the discount code applied
+  window.location.href = "/discount/20OFF"; // Redirects to the discount page
+
+  // Optionally show a success message
+  const discountMessage = document.getElementById("discountMessage");
+  discountMessage.style.display = "block";
+});
+
+
+</script>
+
+{% schema %}
+{
+  "name": "Home page section",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "heroA",
+        "label": "image for the hero section"
+        
+      },
+      {
+        "type": "image_picker",
+        "id": "heroB",
+        "label": "image for the hero section"
+      },
+      {
+        "type": "image_picker",
+        "id": "heroC",
+        "label": "image for the hero section"
+      },
+      {
+        "type": "image_picker",
+        "id": "heroD",
+        "label": "image for the hero section"
+      },
+      {
+        "type": "text",
+        "id": "hero",
+        "default": "Chocolate is",
+        "label": "hero text"
+      },
+      {
+        "type": "text",
+        "id": "hero_span",
+        "default": "Happiness",
+        "label": "hero span text"
+      },
+      {
+        "type": "text",
+        "id": "hero_p",
+        "default": "All of really Need is love it a little chocolate now and the dosen't hurt chocolate is the happiness of your own  purpose around the globl",
+        "label": "hero content"
+      },
+      {
+        "type": "text",
+        "id": "hero_btn",
+        "default": "Shop Now",
+        "label": "hero button content"
+      },
+      {
+      "type": "text",
+      "id":"about_title",
+      "default":"Chocolate is like Hug From the inside",
+      "label":"title for the about section"
+    },
+    {
+        "type": "image_picker",
+        "id": "about_img",
+        "label": "image for the about section"
+        
+      },
+      {
+        "type": "text",
+        "id": "about_p",
+        "default": "Chocolate is a food made from roastedand ground cocoa beans that can be a liquid, solid, or paste,  either on its own or as a flavoring in other foods. The cacao tree has been used as a sourceof food for at least 5,300 years, starting with  the Mayo-Chinchipe culture in what is present-day Ecuado",
+        "label": "para for the about page"
+      },
+      {
+        "type": "text",
+        "id": "about_btn",
+        "default": "Buy Now",
+        "label": "about button content"
+      },
+      {
+        "type": "video",
+        "id": "home-video",
+        "label": "video for the home page"
+      },
+      {
+        "type": "text",
+        "id": "title_best",
+        "default": "Best Selling Products",
+        "label": "title for the collection"
+      },
+      {
+        "type": "collection",
+        "id": "col_selecter",
+        "label": "select an collection"
+        
+      },
+      {
+        "type": "text",
+        "id": "best_btn",
+        "default": "See More",
+        "label": "best button content"
+      },
+      {
+        "type": "text",
+        "id": "buyers",
+        "default": "Where to Find Our Products",
+        "label": "title for buyers section"
+      },
+      {
+        "type": "text",
+        "id": "engoy_title",
+        "default": "Engoyable Your <br> Life Eat Chocolate",
+        "label": "title for engoy section"
+      },
+      {
+        "type": "text",
+        "id": "engoy_p",
+        "default": "Chocolate is a food made from roasted and ground cocoa beans that can be a liquid, solid, or paste, either on its own or as a flavoring in other foods. The cacao tree has been used as a sourceof food for at least 5,300 years, starting with the Mayo-Chinchipe culture in what is present-day Ecuado",
+        "label": "para for the engoy section"
+      },
+      {
+        "type": "text",
+        "id": "engoy_btn",
+        "default": "Explore More",
+        "label": "engoy button content"
+      },
+      {
+        "type": "image_picker",
+        "id": "engoy_img",
+        "label": "image for the engoy section"
+      }
+
+
+    
+    ]
+}
+
+{% endschema %}

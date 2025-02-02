@@ -1,0 +1,480 @@
+<div class="shipping">
+  <p>{{ section.settings.shipping_bar }}</p>
+</div>
+
+
+<header class="header">
+  <div class="bar">
+    <h1 class="logo"><a href="{{ routes.root_url }}">{{ section.settings.logo }}<span>{{ section.settings.logo_span
+          }}</span></a></h1>
+    <nav>
+      {% for link in linklists.main-menu.links %}
+      <a class="links" href="{{ link.url }}">{{ link.title }}
+        {% if link.links != blank %}
+          {% render "arrow-icon" %}
+        {% endif %}
+      </a>
+
+      {% endfor %}
+
+    </nav>
+
+    <div class="header-icon">
+      <a href="{{ routes.search_url }}" >
+        {% render 'serch-icon' %}
+      </a>
+      <a href="{{ routes.account_login_url }}" class="sopping-bag">
+        {% render 'user-icon' %}
+      </a>
+      <a href="{{ routes.cart_url }}" class="sopping-bag">
+        {% render 'shopping-icon' %}
+      </a>
+      <a id="ManuBar" class="manu-bar">
+        {% render "manu-bar-icon" %}
+      </a>
+    </div>
+    <div id="mobilNav" class="mobil-nav">
+      <div class="colse-btn">
+        <a id="closebtn">{% render "close-icon" %}</a>
+      </div>
+
+      {% for link in linklists.main-menu.links %}
+
+
+      <a id="mobillinks" class="links-mobil" href="{{ link.url }}">
+        {{ link.title }}
+        {% if link.links != blank %}
+          {% render "mobile-arrow" %}
+        {% endif %}
+        </a>
+
+    <div class="mylinks">
+      {% for childlink in link.links %}
+        
+        <a  class="mobilechilld" href="{{ childlink.url }}"> 
+         {{ childlink.title }} 
+          
+        </a>
+        
+     {% endfor %}
+    </div>
+
+
+      {% endfor %}
+
+
+    </div>
+  </div>
+
+</header>
+
+<div id="drop" class="drop">
+
+  <div class="dawen">
+    <h1>All Collection</h1>
+    {% for link in linklists.main-menu.links %}
+      
+      {% for childlink in link.links %}
+        
+        <a href="{{ childlink.url }}"> 
+         {{ childlink.title }} 
+         {% if link.links != blank %}
+           {% render "arrow-icon" %}
+         {% endif %}
+        </a>
+    {% endfor %}
+
+    {% endfor %}
+
+  </div>
+  <div class="try">
+    {% for product in collections['hello-1'].products %}
+       {% render "productDrop" , product: product %}
+    {% endfor %}
+  </div>
+</div>
+
+
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  #closebtn{
+   color: #3F000F;
+   width: 20px;
+  }
+
+  /* .dree{
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    height: 300px;
+    position: fixed;
+    z-index: 9999;
+    top: 90px;
+    
+    justify-content: space-around;
+    align-items: center;
+  } */
+  .drop {
+  width: 100%;
+  background-color: #fff;
+  height: 300px;
+  position: fixed;
+  z-index: 9999;
+  top: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.drop:focus {
+  opacity: 1;
+  visibility: visible;
+}
+
+.try {
+  display: flex;
+  gap: 20px;
+}
+
+.dawen {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dawen h1 {
+  color: #3F000F;
+}
+
+.dawen a {
+  text-decoration: none;
+  color: #3F000F;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.dawen a:hover {
+  transform: translateX(20px);
+  transition: 0.5s;
+  }
+
+  .shipping {
+    background-color: #3F000F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    height: 30px;
+  }
+
+  .shipping p {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .header {
+    width: 100%;
+    margin-top: 0px;
+    height: 100px;
+    z-index: 2000;
+    transition: 0.4s;
+    
+
+  }
+
+   .scrolled {
+    background-color: #3F000F !important;
+    position: fixed !important;
+    top: 0 !important;
+    height: 70px !important;
+    transition: 0.4s;
+    color: #fff !important;
+    opacity: 0.97 !important;
+    height: auto;
+    margin-top: 0px;
+    
+
+  }
+
+  .scrolled .logo a {
+    color: #fff;
+    transition: 0.4s;
+  }
+
+
+  .logo a {
+    text-decoration: none;
+    color: #3F000F;
+    transition: 0.4s;
+  }
+
+  .scrolled .logo span {
+    background-color: #fff;
+    color: #3F000F;
+    transition: 0.4s;
+  }
+
+  .logo span {
+    background-color: #3F000F;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+
+  .bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .links {
+    
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    color: #3F000F;
+    transition: 0.4s;
+  }
+
+
+  .scrolled .links {
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  .header-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: 0.4s;
+  }
+
+  .scrolled .header-icon {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    transition: 0.4s;
+  }
+
+  .manu-bar {
+    text-decoration: none;
+    display: none;
+
+
+  }
+
+  .mobil-nav {
+    position: fixed;
+    top: 0;
+    bottom: 100%;
+    width: 500px;
+    height: 400px;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    scale: 0;
+    transition: 0.5s;
+    z-index: 10;
+  }
+
+  .close-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .links-mobil {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+    color: #3F000F;
+
+    display: none;
+
+
+  }
+  .mobilechilld{
+    display: none;
+    text-decoration: none;
+    color: #3F000F;
+    font-size: 15px;
+    
+  }
+  
+  .ohmy{
+    display: flex;
+    text-decoration: none;
+    color: #3F000F;
+    font-size: 15px;
+  }
+
+  .mylinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    nav {
+      display: none;
+    }
+
+    .manu-bar {
+      display: block;
+    }
+
+    .links-mobil {
+      display: block;
+    }
+
+  }
+
+  @media screen and (max-width: 300px) {
+    .shipping p {
+      font-size: 10px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+  
+  }
+</style>
+
+<script>
+  const collections = document.querySelectorAll(".links")[1];
+  collections.classList.add("dropdowen")
+  collections.classList.add("hoverme")
+  console.log(collections)
+  const drop = document.getElementById("drop");
+  const mobilecollection = document.querySelectorAll(".links-mobil")[1]
+
+  const chilld = document.querySelectorAll(".mobilechilld")
+  const dowen = document.querySelector(".dowen")
+  
+    
+   
+
+  mobilecollection.addEventListener("click", (e) => {
+    e.preventDefault()
+    
+    chilld.forEach(el => {
+      el.classList.toggle("ohmy")
+      el.classList.toggle("mobilechilld")
+    });
+
+  
+    
+  })
+  
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const collections = document.querySelectorAll(".links")[1]; // Target the second link
+  const dropdown = document.getElementById("drop"); // The dropdown menu
+
+  // Show dropdown on hover
+  collections.addEventListener("mouseover", () => {
+    dropdown.style.opacity = "1";
+    dropdown.style.visibility = "visible";
+  });
+
+  // Hide dropdown on mouseout
+  collections.addEventListener("mouseout", () => {
+    dropdown.style.opacity = "0";
+    dropdown.style.visibility = "hidden";
+  });
+
+  // Optional: Keep dropdown open when hovering over it
+  dropdown.addEventListener("mouseover", () => {
+    dropdown.style.opacity = "1";
+    dropdown.style.visibility = "visible";
+  });
+
+  dropdown.addEventListener("mouseout", () => {
+    dropdown.style.opacity = "0";
+    dropdown.style.visibility = "hidden";
+  });
+});
+ 
+  
+
+
+  document.addEventListener('scroll', () => {
+    const header = document.querySelector(".header")
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  })
+
+  const mobillinks = document.querySelectorAll("#mobillinks")
+  
+  ManuBar.addEventListener("click", (eo) => {
+    mobilNav.style.bottom = "60%"
+    mobilNav.style.scale = "1"
+
+
+
+
+
+  })
+
+
+  closebtn.addEventListener("click", (eo) => {
+    mobilNav.style.bottom = "100%"
+    mobilNav.style.scale = "0"
+
+
+
+
+
+  })
+
+
+</script>
+
+{% schema %}
+{
+"name": "header",
+"settings": [
+
+{
+"type":"text",
+"id": "shipping_bar",
+"default": "shipping is free for the orders under 70$",
+"label": "first bar"
+
+},
+{
+"type":"text",
+"id": "logo",
+"default": "Choco",
+"label": "logo"
+},
+{
+"type":"text",
+"id": "logo_span",
+"default": "7",
+"label": "logo span"
+}
+]
+}
+{% endschema %}

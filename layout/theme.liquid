@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
+  <script>
+    // Redirect from /cart to home immediately if no cart template exists
+    if (window.location.pathname === "/cart") {
+      window.location.replace("/"); // Use replace to avoid creating a history entry
+    }
+  </script>
+  {{ content_for_header }}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="{{ 'app.js' | asset_url }}" defer></script>
+</head>
+
+<body>
+  {% section 'header' %}
+
+  <main id="main" role="main">
+    {{ content_for_layout }}
+
+  </main>
+  {% section 'footer' %}
+
+  
+  
+</body>
+
+</html>
+<style>
+
+
+</style>

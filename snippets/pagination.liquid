@@ -1,0 +1,46 @@
+
+
+
+
+
+{% if pagination.pages > 1 %}
+   <nav role="navigation" class="paginat">
+      {% if pagination.previous %}
+          <a href="{{ pagination.previous.url }}">Previous</a>
+      {% endif %}
+
+      {% if pagination.next %}
+          <a href="{{ pagination.next.url }}">Next</a>
+      {% endif %}
+   </nav>
+
+
+
+{% endif %}
+
+
+<style>
+    * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .paginat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    gap: 30px;
+  }
+
+  .paginat a{
+    text-decoration: none;
+    background-color: #3f000f;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+    
+  }
+</style>

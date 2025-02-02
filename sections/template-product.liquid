@@ -1,0 +1,375 @@
+<div class="product-page">
+  <div class="pro-card">
+
+      
+        <img src="{{ product.featured_image | img_url: "master"}}" alt="">
+      
+    <div class="pro-info">
+  {% form 'product', product %}
+      <h1>{{ product.title }}</h1>
+
+
+      <p>{{ product.vendor }}</p>
+
+
+      <!-- Start of Judge.me code -->
+      <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
+        {{ product.metafields.judgeme.badge }}
+      </div>
+
+
+      <!-- End of Judge.me code -->
+
+      <h2 id="product-price">{{ product.selected_or_first_available_variant.price | money }}</h2>
+
+
+      <p>{{ product.description }}</p>
+
+
+      {% unless product.has_only_default_variant %}
+
+
+      <div data-url="{{ product.url }}" data-section="{{ section.id }}">
+
+           <select  id="variant-select">
+
+            {% for variant in product.variants %}
+
+              <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}
+                selected
+              {% endif %}
+              data-price="{{ variant.price | money }}"
+              
+              >
+
+                {{ variant.title }}
+
+              </option>
+
+            {% endfor %}
+
+           </select>
+
+      </div>
+
+      {% endunless %}
+
+      
+    <div class="quantity-content">
+      <p class="p-quan">Quantity</p>
+      <div class="quantity">
+        <button class="qbtn" id="qbtn1">+</button>
+        <input class="quantity-input" type="number" name="quantity" id="Quantity" value="1" min="1">
+         <button class="qbtn"  id="qbtn2">-</button>
+      </div>
+    </div>
+      
+    
+      <div>
+
+      <button type="submit" name="add" {% if product.selected_or_first_available_variant== false %} disabled {% endif %}
+        class="check-out">
+
+       {% if product.selected_or_first_available_variant.available == false %}
+
+         Solde Out
+       {% else %}
+
+         Add To Cart
+      {% endif %}
+
+      </button>
+    </div>
+
+  {% endform %}
+    </div>
+  </div>
+
+
+    <div class="also-like">
+      <h1>You may also like</h1>
+      <div class="also-pro">
+         {% for product in collections['you-may-also-like'].products %}
+           {% render 'product', product: product %}
+         {% endfor %}
+      </div>
+    </div>
+
+
+  <!-- Start of Judge.me code -->
+  <div style='clear:both'></div>
+  <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget'
+    data-product-title='{{ product.title | escape }}' data-id='{{ product.id }}' data-auto-install='false'>{{
+    product.metafields.judgeme.widget }}
+  </div>
+  <!-- End of Judge.me code -->
+</div>
+
+
+
+
+
+
+
+<style>
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .product-page {
+    width: 100%;
+  }
+
+  .pro-card {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    gap: 130px;
+
+  }
+
+  .pro-card img {
+    width: 400px;
+    height: 400px;
+  
+    object-fit: contain;
+  
+  
+  }
+
+  .pro-info {
+    display: flex;
+    flex-direction: column;
+  
+    
+
+  }
+
+
+  .pro-info p {
+    max-width: 350px;
+    margin-top: 10px;
+  }
+
+  .pro-info h1 {
+    color: #3f000f;
+  }
+
+  .option-name {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 15px;
+    color: #3f000f;
+  }
+
+  select {
+    width: 350px;
+    padding: 10px 0px;
+    border: 1px solid #3f000f;
+    color: #3f000f;
+    font-size: 15px;
+    cursor: pointer;
+
+  }
+
+  option {
+    background-color: #3f000f;
+    color: #fff;
+    cursor: pointer;
+  
+  }
+
+  .p-quan {
+    color: #3f000f;
+    margin-top: 10px;
+
+  }
+
+  .quantity-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .quantity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border: 1px solid black;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 30px;
+  }
+  .quantity-input::-webkit-outer-spin-button,
+  .quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+    margin: 0;
+    display: flex;
+}
+
+  .qbtn{
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  #qbtn2{
+    font-size: 35px;
+    margin-bottom: 3px;
+  }
+
+  .quantity-input {
+    width: 12px;
+    font-size: 15px;
+    
+  
+    border: none;
+    background: none;
+    
+  }
+
+
+  @media (max-width: 768px) {
+    .quantity{
+      width: 100%;
+    }
+  }
+  @media (max-width: 480px) {
+    .quantity{
+      width: 50%;
+      justify-content: center;
+      
+      height: 40px;
+    }
+    .quantity-input {
+      font-size: 15px;
+      width: 20px;
+      margin-left: 15px;
+    }
+  }
+  @media (max-width: 400px) {
+    .quantity{
+      width: 60%;
+    }
+    .quantity-input {
+      font-size: 15px;
+      width: 10px;
+      padding-left: 5px;
+    }
+  }
+
+  @media (max-width: 260px) {
+    .quantity{
+      width: 100%;
+    }
+    
+  }
+
+  .check-out { 
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #3f000f;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+
+  }
+
+  /* Responsive styles for tablets and smaller screens */
+@media (max-width: 768px) {
+  .pro-card {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center-align items */
+    gap: 20px;              /* Reduce gap between elements */
+  }
+
+  .pro-card img {
+    width: 100%;            /* Allow image to scale with screen size */
+    max-width: 400px;       /* Maintain maximum width */
+    height: auto;           /* Keep aspect ratio */
+  }
+
+  .pro-info {
+    align-items: center;    /* Center-align the product info */
+    text-align: center;
+  }
+
+  select {
+    width: 100%;            /* Make dropdowns fit smaller screens */
+    max-width: 350px;
+  }
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 480px) {
+  .pro-card img {
+    max-width: 300px;       /* Further reduce image size for very small screens */
+  }
+
+  .quantity-input {
+    width: 50px;            /* Slightly increase size for usability */
+  }
+
+  .check-out {
+    width: 80%;
+    font-size: 14px;        /* Adjust button font size */
+    padding: 8px;           /* Adjust padding */
+  }
+}
+
+
+.also-like{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  flex-direction: column;
+  width: 100%;
+}
+.also-like h1{
+  color: #3f000f;
+}
+.also-pro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+@media (max-width: 500px) {
+  .also-pro{
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow-x: scroll;
+    overflow-inline: auto;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: auto;
+    gap: 15px;
+    
+    max-width: 80%;
+  }
+}
+
+
+
+</style>
+
+

@@ -1,0 +1,74 @@
+<div class="mainus-pro">
+    <a  href="{{ product.url }}">
+      <img src="{{ product.featured_image | img_url: "medium" }}" alt="{{ product.featured_image.alt }}">
+        
+    </a>
+    <span>{{ product.vendor }}</span>
+        <a class="pro-title" href="{{ product.url }}">{{ product.title }}</a>
+        <p>{{ product.price | money }}</p>
+  </div>
+  <style>
+   .mainus-pro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   cursor: pointer;
+    text-decoration: none;
+    gap: 10px;
+    border: 1px solid #3F000F ;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+  }
+  .mainus-pro img{
+    width: 150px;
+  }
+  .main-pro span{
+    color: gray;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .pro-title{
+    text-decoration: none;
+    color: black;
+  }
+  /* @media screen and (max-width: 00px) {
+    .main-pro{
+      width: 200px;
+      height: 300px;
+    }
+    .main-pro img{
+      width: 150px;
+    }
+  } */
+
+  @media screen and (max-width: 600px) {
+    .main-pro{
+      width: 200px;
+      height: 300px;
+    }
+    .main-pro img{
+      width: 150px;
+    }
+
+    .pro-title{
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .main-pro{
+      width: 150px;
+      height: 200px;
+    }
+    .main-pro img{
+      width: 100px;
+    }
+
+    .pro-title{
+      font-size: 10px;
+    }
+  }
+  </style>
+  
