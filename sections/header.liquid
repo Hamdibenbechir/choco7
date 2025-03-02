@@ -196,9 +196,9 @@
     height: 70px !important;
     transition: 0.4s;
     color: #fff !important;
-    opacity: 0.97 !important;
-    height: auto;
-    margin-top: 0px;
+  
+    
+    
     
 
   }
@@ -258,12 +258,7 @@
     transition: 0.4s;
   }
 
-  .scrolled .header-icon {
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    transition: 0.4s;
-  }
+  
 
   .manu-bar {
     text-decoration: none;
@@ -416,14 +411,35 @@
   
 
 
-  document.addEventListener('scroll', () => {
-    const header = document.querySelector(".header")
-    if (window.scrollY > 0) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  })
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    const header = document.querySelectorAll(".header")
+
+
+    header.forEach(el => {
+      el.classList.add("scrolled");
+    });
+    
+  } else {
+    const header = document.querySelectorAll(".header")
+    header.forEach(el => {
+      el.classList.remove("scrolled");
+    });
+  }
+
+  if (window.pageYOffset === 0) {
+    const header = document.querySelectorAll(".header")
+    header.forEach(el => {
+      el.classList.remove("scrolled");
+    });
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
 
   const mobillinks = document.querySelectorAll("#mobillinks")
   

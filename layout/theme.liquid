@@ -22,12 +22,85 @@
   </main>
   {% section 'footer' %}
 
+
+  <div class="cookies">
+    <h1>Cookies Policy:</h1>
+    <p>This website uses cookies to enhance your browsing experience, personalize content, and analyze website traffic. Cookies are small text files stored on your device that help us improve functionality and provide a better user experience. By continuing to use our website, you consent to our use of cookies in accordance with this policy.
+
+    You can manage or disable cookies through your browser settings at any time. However, please note that some features of the site may not function properly without cookies. For more details on how we use cookies and how you can control them, please visit our [Privacy Policy].</p>
+    <div>
+      <a class="accept" href="">Accept All Cookies</a>
+    </div>
+
+  </div>
+
   
   
 </body>
 
 </html>
 <style>
+.cookies{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 2000;
+  background-color: #fff;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
 
+  flex-direction: column;
+  transition: 0.4s;
+
+}
+.cookies h1{
+  font-size: 30px;
+  color: #3F000F;
+  margin-left: 50px;
+}
+.cookies p{
+  max-width: 80%;
+  font-size: 20px;
+  margin-left: 30px;
+}
+.cookies div{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.cookies div a{
+  text-decoration: none;
+  background-color: #3F000F;
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  border-radius: 20px;
+}
+.cookiesme{
+  visibility: hidden;
+}
 
 </style>
+
+
+<script> 
+const acc = document.querySelector(".accept")
+const cookies = document.querySelector(".cookies")
+
+if (localStorage.getItem("Received") === "true") {
+  
+   cookies.classList.add("cookiesme")
+  
+}
+
+
+acc.addEventListener("click", (e) => {
+  e.preventDefault()
+  cookies.classList.add("cookiesme")
+  localStorage.setItem("Received", "true");
+})
+
+</script>

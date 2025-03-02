@@ -537,41 +537,8 @@ width: 100%;
       transform: translateX(0px);
     }
   }
-  .choco-img{
-    animation: aboutimg 1s ease-in-out;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-    animation-fill-mode: forwards;
-  }
-  .choco-info{
-    animation: aboutinfo 1s ease-in-out;
-    animation-timeline: view();
-    animation-range: entry 0% cover 50%;
-    animation-fill-mode: forwards;
-    
-  }
-
-  /* ABOUT animation end */
-  /* BEST animation strat */
-  @keyframes bestsale {
-    from{
-      transform: translateX(500px);
   
-    }
-    to{
-      transform: translateX(0px);
-    }
-  }
 
-  .best-sale h1{
-    animation: bestsale 1s linear;
-    animation-timeline: view();
-    
-    animation-range: entry 0% cover 50%; 
-  }
-  /* BEST animation end */
-
-  /* shope animation start */
   @keyframes shop {
     from{
       scale: 0;
@@ -1180,6 +1147,7 @@ width: 100%;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
   }
 
   .custom-shape-divider-top-1731268908 {
@@ -1314,11 +1282,7 @@ width: 100%;
 
   }
 
-  @media screen and (max-width:1200px) {
-    .my-video {
-      width: ;
-    }
-  }
+
 
   .best-sale {
     width: 100%;
