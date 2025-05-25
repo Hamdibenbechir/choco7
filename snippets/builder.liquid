@@ -1,0 +1,731 @@
+<div class="build-set">
+  <div class="set-header">
+     <h1>build Your Set</h1>
+     {% render "close-icon" %}
+  </div>
+  <div class="steps">
+    <div class="one step-num active">1</div>
+    <div class="line"></div>
+    <div class="tow step-num">2</div>
+    <div class="line2"></div>
+    <div class="thre step-num">3</div>
+  </div>
+  <div class="step step-one">
+     <div class="steps-header">
+       <p>select a chocolate bar:</p>
+       <p>step 1 out or 3</p>
+     </div>
+     <div class="steps-wrapper">
+        <div class="bar-wrapper">
+            {% for product in collections['Chocolate-Bar'].products %}
+              {% render "set-card", product: product %}
+              
+            {% endfor %}
+        </div>
+     </div>
+  
+  </div>
+
+  <div class="step step-tow ghost">
+     <div class="steps-header">
+       <p>select a chocolate bar:</p>
+       <p>step 2 out or 3</p>
+     </div>
+     <div class=" steps-wrapper">
+        <div class="bar-wrapper">
+            {% for product in collections['hello'].products %}
+              {% render "set-card", product: product %}
+              
+            {% endfor %}
+        </div>
+     </div>
+  
+  </div>
+    <div class="step step-thre ghost">
+     <div class="steps-header">
+       <p>select a chocolate bar:</p>
+       <p>step 3 out or 3</p>
+     </div>
+     <div class=" steps-wrapper">
+        <div class="bar-wrapper">
+            {% for product in collections['frontpage'].products %}
+              {% render "set-card", product: product %}
+              
+            {% endfor %}
+        </div>
+     </div>
+  
+  </div>
+
+  <div class="summery ghost">
+    
+  
+  </div>
+</div>
+
+ 
+<style>
+
+
+
+.set-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #3f000f;
+  padding: 10px;
+  width: 100%;
+}
+.set-footer button{
+  margin-top: 10px;
+    text-decoration: none;
+    background-color: #3f000f;
+    color: #fff;
+    border: none;
+    width: 400px ;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.set-footer h1{
+  color: #3f000f;
+  margin-top: 10px;
+}
+.edit{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.edit p{
+  font-size: 13px;
+  color: grey;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+}
+
+.summery{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.sum{
+    display: flex;
+  justify-content: flex-start;
+  
+
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.last{
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 15px;
+}
+.build-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.build-card img{
+  width: 80px;
+
+}
+.build-card h1{
+  font-size: 15px;
+}
+
+  .build-set{
+    width: 60%;
+    height: 450px;
+    border: 3px solid #3f000f;
+    border-radius: 30px;
+      overflow: hidden;
+
+    position: relative;
+    
+     
+  }
+
+  .set-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+  .set-header h1{
+    color: #3f000f;
+    font-size: 20px;
+  }
+  .steps{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #3f000f;
+  }
+
+  .line{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .line2{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .step-num{
+    border: 1px solid #3f000f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 40px;
+    font-size: 23px;
+    border-radius: 50%;
+  }
+  @keyframes ourmove {
+    0%{
+      box-shadow: 1px 1px 1px 1px #3f000f;
+    }
+    50%{
+       box-shadow: 0px 0px 10px 5px #3f000f;
+    }
+    100%{
+      box-shadow: 1px 1px 1px 1px #3f000f;
+    }
+  }
+  .active{
+    background-color: #3f000f;
+    color: #fff;
+    scale: 1.1;
+    animation: ourmove 1.5s infinite ease-in-out ;
+  }
+  .step{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+
+  
+  
+  }
+  
+
+
+  .steps-header{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px;
+     width: 100%;
+
+  }
+  .steps-header p{
+    font-size: 18px;
+  }
+  .steps-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }   
+  .bar-wrapper{
+  display: grid;   
+  grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding-left:0px ;
+    width: 80%;
+    margin-top: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 250px;
+  }
+    .ghost{
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+    @media screen and (max-width: 800px) {
+  .build-set{
+    width: 90%;
+    height: 450px;
+    border: 3px solid #3f000f;
+    border-radius: 30px;
+      overflow: hidden;
+
+    position: relative;
+    
+     
+  }
+
+
+  .steps{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #3f000f;
+  }
+
+  .line{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .line2{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .step-num{
+    border: 1px solid #3f000f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 50%;
+  }
+  .bar-wrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-left:0px ;
+    width: 100%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 300px;
+    padding: 10px;
+  }
+    
+
+  }
+
+
+      @media screen and (max-width: 700px) {
+  .build-set{
+    width: 95%;
+    height: 450px;
+    border: 3px solid #3f000f;
+    border-radius: 30px;
+      overflow: hidden;
+
+    position: relative;
+    
+     
+  }
+
+
+  .steps{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #3f000f;
+  }
+
+  .line{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .line2{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .step-num{
+    border: 1px solid #3f000f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 50%;
+  }
+  .bar-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-left:0px ;
+    width: 80%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 300px;
+    padding: 10px;
+  }
+    
+
+  }
+
+        @media screen and (max-width: 650px) {
+  .build-set{
+    width: 95%;
+    height: 450px;
+    border: 3px solid #3f000f;
+    border-radius: 30px;
+      overflow: hidden;
+
+    position: relative;
+    
+     
+  }
+
+
+  .steps{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #3f000f;
+  }
+
+  .line{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .line2{
+    width: 480px;
+    background-color: #3f000f;
+    height: 3px;
+  }
+  .step-num{
+    border: 1px solid #3f000f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 50%;
+  }
+  .bar-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-left:0px ;
+    width: 80%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 300px;
+    padding: 10px;
+  }
+    
+
+.set-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #3f000f;
+  padding: 10px;
+  width: 100%;
+}
+.set-footer button{
+  margin-top: 0px;
+    text-decoration: none;
+    background-color: #3f000f;
+    color: #fff;
+    border: none;
+    width: 200px ;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.set-footer h1{
+  color: #3f000f;
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+
+  }
+
+
+
+
+
+        @media screen and (max-width: 500px) {
+      .build-set{
+        width: 95%;
+        height: 450px;
+        border: 3px solid #3f000f;
+        border-radius: 30px;
+          overflow: hidden;
+
+        position: relative;
+        
+          }
+
+  .bar-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-left:0px ;
+    width: 90%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 300px;
+    padding: 10px;
+  }
+    
+
+  
+}
+
+@media screen and (max-width: 450px) {
+        .build-set{
+          width: 95%;
+          height: 500px;
+          border: 3px solid #3f000f;
+          border-radius: 30px;
+            overflow: hidden;
+        padding: 10px;
+          position: relative;
+          
+          
+        }
+
+
+        .step-num{
+          border: 1px solid #3f000f;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 70px;
+          height: 25px;
+          font-size: 15px;
+          border-radius: 50%;
+        }
+        .bar-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+          gap: 5px;
+          padding-left:0px ;
+          width: 100%;
+          margin-top: 5px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          scrollbar-width: thin;
+          max-height: 300px;
+          padding: 10px;
+        }
+          
+
+      .set-footer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid #3f000f;
+        padding: 10px;
+        width: 100%;
+        gap: 10px;
+      }
+      .set-footer h1{
+        font-size: 20px;
+      }
+      .set-footer button{
+        margin-top: 0px;
+          text-decoration: none;
+          background-color: #3f000f;
+          color: #fff;
+          border: none;
+          width: 200px ;
+          padding: 10px;
+          font-size: 15px;
+          cursor: pointer;
+      }
+      .set-footer h1{
+        color: #3f000f;
+        margin-top: 0px;
+        font-size: 20px;
+      }
+      .summery{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.sum{
+    display: flex;
+  justify-content: flex-start;
+  
+
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.last{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 15px;
+}
+.build-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.build-card img{
+  width: 70px;
+
+}
+.build-card h1{
+  font-size: 12px;
+}
+.build-card h2{
+  font-size: 15px;
+}
+}
+
+
+@media screen and (max-width: 400px) {
+        .build-set{
+          width: 95%;
+          height: 500px;
+          border: 3px solid #3f000f;
+          border-radius: 30px;
+            overflow: hidden;
+        padding: 10px;
+          position: relative;
+          
+          
+        }
+
+
+        .step-num{
+          border: 1px solid #3f000f;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 70px;
+          height: 25px;
+          font-size: 15px;
+          border-radius: 50%;
+        }
+        .bar-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+          gap: 5px;
+          padding-left:0px ;
+          width: 95%;
+          margin-top: 5px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          scrollbar-width: thin;
+          max-height: 300px;
+          padding: 0px;
+        }
+          
+
+      .set-footer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid #3f000f;
+        padding: 10px;
+        width: 100%;
+        gap: 10px;
+      }
+      .set-footer h1{
+        font-size: 20px;
+      }
+      .set-footer button{
+        margin-top: 0px;
+          text-decoration: none;
+          background-color: #3f000f;
+          color: #fff;
+          border: none;
+          width: 200px ;
+          padding: 10px;
+          font-size: 15px;
+          cursor: pointer;
+      }
+      .set-footer h1{
+        color: #3f000f;
+        margin-top: 0px;
+        font-size: 20px;
+      }
+      .summery{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+}
+.sum{
+    display: flex;
+  justify-content: flex-start;
+  
+
+  width: 100%;
+  padding: 0px;
+  gap: 20px;
+}
+.last{
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  height: 200px;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 15px;
+}
+.build-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+.build-card img{
+  width: 70px;
+
+}
+.build-card h1{
+  font-size: 12px;
+}
+.build-card h2{
+  font-size: 15px;
+}
+}
+</style>

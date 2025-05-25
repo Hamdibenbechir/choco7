@@ -4,87 +4,91 @@
       
         <img src="{{ product.featured_image | img_url: "master"}}" alt="">
       
-    <div class="pro-info">
-  {% form 'product', product %}
-      <h1>{{ product.title }}</h1>
+   <div class="pro-info">
+      {% form 'product', product %}
+          <h1>{{ product.title }}</h1>
 
 
-      <p>{{ product.vendor }}</p>
+          <p>{{ product.vendor }}</p>
 
 
-      <!-- Start of Judge.me code -->
-      <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
-        {{ product.metafields.judgeme.badge }}
-      </div>
+          <!-- Start of Judge.me code -->
+          <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
+            {{ product.metafields.judgeme.badge }}
+          </div>
 
 
-      <!-- End of Judge.me code -->
+          <!-- End of Judge.me code -->
 
-      <h2 id="product-price">{{ product.selected_or_first_available_variant.price | money }}</h2>
-
-
-      <p>{{ product.description }}</p>
+          <h2 id="product-price">{{ product.selected_or_first_available_variant.price | money }}</h2>
 
 
-      {% unless product.has_only_default_variant %}
+          <p>{{ product.description }}</p>
 
 
-      <div data-url="{{ product.url }}" data-section="{{ section.id }}">
+          {% unless product.has_only_default_variant %}
 
-           <select  id="variant-select">
 
-            {% for variant in product.variants %}
+          <div data-url="{{ product.url }}" data-section="{{ section.id }}">
 
-              <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}
-                selected
-              {% endif %}
-              data-price="{{ variant.price | money }}"
-              
-              >
+              <select  id="variant-select">
 
-                {{ variant.title }}
+                {% for variant in product.variants %}
 
-              </option>
+                  <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}
+                    selected
+                  {% endif %}
+                  data-price="{{ variant.price | money }}"
+                  
+                  >
 
-            {% endfor %}
+                    {{ variant.title }}
 
-           </select>
+                  </option>
 
-      </div>
+                {% endfor %}
 
-      {% endunless %}
+              </select>
 
-      
-    <div class="quantity-content">
-      <p class="p-quan">Quantity</p>
-      <div class="quantity">
-        <button class="qbtn" id="qbtn1">+</button>
-        <input class="quantity-input" type="number" name="quantity" id="Quantity" value="1" min="1">
-         <button class="qbtn"  id="qbtn2">-</button>
-      </div>
-    </div>
-      
-    
-      <div>
+          </div>
 
-      <button type="submit" name="add" {% if product.selected_or_first_available_variant== false %} disabled {% endif %}
-        class="check-out">
+          {% endunless %}
 
-       {% if product.selected_or_first_available_variant.available == false %}
+          
+        <div class="quantity-content">
+          <p class="p-quan">Quantity</p>
+          <div class="quantity">
+            <button class="qbtn" id="qbtn1">+</button>
+            <input class="quantity-input" type="number" name="quantity" id="Quantity" value="1" min="1">
+            <button class="qbtn"  id="qbtn2">-</button>
+          </div>
+        </div>
+          
+        
+          <div>
 
-         Solde Out
-       {% else %}
+          <button type="submit" name="add" {% if product.selected_or_first_available_variant== false %} disabled {% endif %}
+            class="check-out">
 
-         Add To Cart
-      {% endif %}
+          {% if product.selected_or_first_available_variant.available == false %}
 
-      </button>
-    </div>
+            Solde Out
+          {% else %}
 
-  {% endform %}
+            Add To Cart
+          {% endif %}
+
+          </button>
+  
+        </div>
+
+      {% endform %}
+      <button class="build-box">Build Your Chocolate box</button>
     </div>
   </div>
-
+   <div class="builds">
+     {% render "builder" %}
+   </div>
 
     <div class="also-like">
       <h1>You may also like</h1>
@@ -117,7 +121,12 @@
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-
+.builds{
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
   .product-page {
     width: 100%;
   }
@@ -147,6 +156,9 @@
   
     
 
+  }
+  .hidden{
+    display: none;
   }
 
 
@@ -285,6 +297,17 @@
     cursor: pointer;
 
   }
+  .build-box{
+      margin-top: 10px;
+    text-decoration: none;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+  }
 
   /* Responsive styles for tablets and smaller screens */
 @media (max-width: 768px) {
@@ -326,6 +349,12 @@
     font-size: 14px;        /* Adjust button font size */
     padding: 8px;           /* Adjust padding */
   }
+    .build-box{
+        width: 80%;
+    font-size: 14px;        /* Adjust button font size */
+    padding: 8px;  
+  }
+
 }
 
 

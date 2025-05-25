@@ -1,0 +1,94 @@
+<div class="main-proa"  data-title="{{ product.title | escape }}"  data-image="{{ product.featured_image | img_url: 'medium' }}"  data-pro="{{  product.variants.first.id  }}" data-price="{{ product.price |  money }}">
+        <img src="{{ product.featured_image | img_url: "medium" }}" alt="{{ product.featured_image.alt }}">
+  
+    <span>{{ product.vendor }}</span>
+    <a class="proa-title" href="{{ product.url }}">{{ product.title }}</a>
+    
+    <!-- Judge.me code -->
+    <div class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}'>
+        {{ product.metafields.judgeme.badge }}
+    </div>
+    
+    <p>{{ product.price | money }}</p>
+    
+</div>
+
+
+<style>
+
+    
+   .main-proa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    text-decoration: none;
+    gap: 6px;
+    border: 1px solid #3F000F ;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .main-proa img{
+      width: 80px;
+  }
+  .main-proa span{
+    color: gray;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .proa-title{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+  }
+  /* @media screen and (max-width: 00px) {
+    .main-pro{
+      width: 200px;
+      height: 300px;
+    }
+    .main-pro img{
+      width: 150px;
+    }
+  } */
+
+  @media screen and (max-width: 650px) {
+    .main-proa{
+      width: 120px;
+      height: 200px;
+    }
+    .main-proa img{
+      width: 70px;
+    }
+
+    .pro-title{
+      font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+      .main-proa{
+      width: 150px;
+      height: 220px;
+    }
+    .main-proa img{
+      width: 80px;
+    }
+
+    .pro-title{
+      font-size: 11px;
+    }
+  }
+  
+</style>
+
+<script>
+
+
+
+
+</script>
+  
