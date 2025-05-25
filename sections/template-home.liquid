@@ -84,8 +84,8 @@
 
 <div class="best-sale">
   <h1>{{ section.settings.title_best }}</h1>
-  <div class="best-pro" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-  {% for product in collections['best-selling-products'].products %}
+  <div class="best-pro" >
+  {% for product in collections['best-selling-products'].products limit: 4 %}
 
     {% render 'product' , product: product %}
   
@@ -1286,12 +1286,12 @@ width: 100%;
 
   .best-sale {
     width: 100%;
-    height: auto;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
   .best-sale h1{
     color: #3F000F;
@@ -1300,36 +1300,19 @@ width: 100%;
   }
 
 
-  .best-pro::-webkit-scrollbar{
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 10px;
-    height: 8px;
-    
-  }
-  .best-pro::-webkit-scrollbar-thumb{
-    background-color: #3F000F;
-    border-radius: 10px;
-    scrollbar-width: 20px;
-    
-  }
+
+
   .best-pro {
-    width: 85%;
+    width: 100%;
     display: flex;
-    height: 400px;
+    justify-content: center;
+    flex-wrap: wrap;
+     
     align-items: center;
     /* flex-wrap: wrap; */
-    position: relative;
-    overflow-x: scroll;
-    overflow-inline: auto;
     gap: 30px;
     margin-top: 20px;
-    scroll-behavior: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: auto;
-    scrollbar-width: 50px;
-    
+
 
   }
 
@@ -1357,6 +1340,17 @@ width: 100%;
     
     font-size: 25px;
     
+  }
+      .best-sale{
+    
+    gap: 10px;
+    
+  }
+  
+    .best-pro {
+      gap: 10px;
+    
+
   }
   }
   @media screen and (max-width: 300px) {
@@ -1458,6 +1452,25 @@ width: 100%;
   .find-our h1{
   
   font-size: 25px;
+}
+
+.item{
+
+  width: 80px;
+  height: 80px;
+
+}
+  
+.wrapper{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  width: 95%;
+  
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  mask-image:none ;
 }
   }
   @media screen and (max-width: 304px) {
